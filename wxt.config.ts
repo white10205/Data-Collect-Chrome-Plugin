@@ -8,6 +8,8 @@ export default defineConfig({
       'webRequest',
       'webRequestBlocking',
       'tabs', // 用于 chrome.tabs.sendMessage
+      'downloads',
+      'storage'
     ],
     host_permissions: [
       // Manifest V3 必需
@@ -17,7 +19,13 @@ export default defineConfig({
     content_scripts: [
       {
         matches: ['*://*.xiaohongshu.com/*'],
-        js: ['content-scripts/content.js']
+        js: ['content-scripts/content.js'],
+      },
+    ],
+    web_accessible_resources: [
+      {
+        resources: ['inject.js'],
+        matches: ['*://*.xiaohongshu.com/*'],
       },
     ],
   },
