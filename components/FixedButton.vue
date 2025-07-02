@@ -9,8 +9,8 @@
     </div>
     <div class="rank-list">
       <span class="title">爆款排行</span>
-      <div class="rank-item" v-for="(item,index) in rank" :key="item.id">
-        <span class="rank-num">{{ index + 1}}</span>
+      <div class="rank-item" v-for="(item, index) in rank" :key="item.id">
+        <span class="rank-num">{{ index + 1 }}</span>
         <span class="text">{{ item.title }}</span>
       </div>
     </div>
@@ -22,7 +22,9 @@ import { ref, onMounted, onUnmounted } from 'vue';
 const totalNote = ref(0);
 const xhsNotes = ref<any[]>([]);
 const rank = computed(() => {
-  return xhsNotes.value.sort((a: any, b: any) => b.liked_count - a.liked_count).slice(0,10);
+  return xhsNotes.value
+    .sort((a: any, b: any) => b.liked_count - a.liked_count)
+    .slice(0, 10);
 });
 // 更新数据条数
 const handleStorageChange = (
@@ -92,7 +94,7 @@ onUnmounted(() => {
   gap: 20px;
   margin-bottom: 50px;
 }
-.rank-list{
+.rank-list {
   width: 200px;
   background-color: #fff;
   border-radius: 30%;
@@ -101,7 +103,7 @@ onUnmounted(() => {
   gap: 10px;
   align-items: flex-start;
 }
-.rank-item{
+.rank-item {
   display: flex;
   justify-content: center;
   align-items: center;

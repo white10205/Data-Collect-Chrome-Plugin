@@ -36,16 +36,16 @@
           });
         }
         if (this._url && this._url.includes(NOTE_DETAIL_URL)) {
-          // let json = null;
-          // try {
-          //   json = JSON.parse(this.response);
-          // } catch (e) {}
-          // sendToContentScript({
-          //   type: 'XHS_NOTE_RESULT',
-          //   method: this._method,
-          //   url: this._url,
-          //   data: json,
-          // });
+          let json = null;
+          try {
+            json = JSON.parse(this.response);
+          } catch (e) {}
+          sendToContentScript({
+            type: 'XHS_NOTE_RESULT',
+            method: this._method,
+            url: this._url,
+            data: json,
+          });
           console.log('@@@@@');
           
         }
@@ -75,17 +75,16 @@
           });
         }
         if (this._url && this._url.includes(NOTE_DETAIL_URL)) {
-          // let json = null;
-          // try {
-          //   json = JSON.parse(this.response);
-          // } catch (e) {}
-          // sendToContentScript({
-          //   type: 'XHS_NOTE_RESULT',
-          //   method: this._method,
-          //   url: this._url,
-          //   data: json,
-          // });
-          console.log('@@@@@');
+          let json = null;
+          try {
+            json = JSON.parse(this.response);
+          } catch (e) {}
+          sendToContentScript({
+            type: 'XHS_NOTE_RESULT',
+            method: this._method,
+            url: this._url,
+            data: json,
+          });
           
         }
       } catch (e) {}
