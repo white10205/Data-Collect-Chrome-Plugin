@@ -1,7 +1,7 @@
 // public/inject.js
 (function () {
   const TARGET_URL = 'api/sns/web/v1/search/notes';
-
+  const NOTE_DETAIL_URL = 'api/sns/web/v1/feed'
   function sendToContentScript(data) {
     window.postMessage(
       {
@@ -35,6 +35,20 @@
             data: json,
           });
         }
+        if (this._url && this._url.includes(NOTE_DETAIL_URL)) {
+          // let json = null;
+          // try {
+          //   json = JSON.parse(this.response);
+          // } catch (e) {}
+          // sendToContentScript({
+          //   type: 'XHS_NOTE_RESULT',
+          //   method: this._method,
+          //   url: this._url,
+          //   data: json,
+          // });
+          console.log('@@@@@');
+          
+        }
       } catch (e) {}
     });
     return origSend.apply(this, args);
@@ -59,6 +73,20 @@
             url,
             data: json,
           });
+        }
+        if (this._url && this._url.includes(NOTE_DETAIL_URL)) {
+          // let json = null;
+          // try {
+          //   json = JSON.parse(this.response);
+          // } catch (e) {}
+          // sendToContentScript({
+          //   type: 'XHS_NOTE_RESULT',
+          //   method: this._method,
+          //   url: this._url,
+          //   data: json,
+          // });
+          console.log('@@@@@');
+          
         }
       } catch (e) {}
       return res;

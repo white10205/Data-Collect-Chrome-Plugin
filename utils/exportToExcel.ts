@@ -15,6 +15,7 @@ export function exportToExcel(
         评论数: item.comment_count,
         分享数: item.shared_count,
         发布时间: item.publish_time,
+        笔记链接: item.noteLink,
         博主链接: item.homeLink,
       }));
 
