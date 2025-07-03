@@ -15,6 +15,7 @@
     "postinstall": "wxt prepare"
   },
   "dependencies": {
+    "axios": "^1.10.0",
     "vant": "^4.9.20",
     "vue": "^3.5.13",
     "xlsx": "^0.18.5"
